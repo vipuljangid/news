@@ -214,7 +214,7 @@ const Home = () => {
             <div className="p-4">
               <h2 className="text-xl font-bold mb-2">{news.title}</h2>
               <p className="text-gray-700 mb-2">{news.description}</p>
-              <p className="text-sm text-gray-500">Published by {news.author} on {news.publishDate}</p>
+              <p className="text-sm text-gray-500">Published by <span className='font-bold'>{news.author}</span> on {news.publishDate}</p>
             </div>
           </div>
         ))}

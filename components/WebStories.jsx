@@ -26,17 +26,20 @@ const stories = [
 ];
 
 const responsive = {
-    superLargeDesktop: {
-      // the naming can be any, depends on you.
-      breakpoint: { max: 4000, min: 3000 },
-      items: 5
-    },
     desktop: {
-      breakpoint: { max: 3000, min: 1024 },
+      breakpoint: { max: 6000, min: 14001 },
+      items: 6
+    },
+    deskto: {
+      breakpoint: { max: 1400, min: 1024 },
       items: 4
     },
     tablet: {
-      breakpoint: { max: 1024, min: 464 },
+      breakpoint: { max: 1024, min: 800 },
+      items: 3
+    },
+    tablet: {
+      breakpoint: { max: 800, min: 464 },
       items: 2
     },
     mobile: {
@@ -47,11 +50,11 @@ const responsive = {
 
 const WebStories = () => {
   return (
-    <div className="py-8 bg-black text-white">
+    <div className="py-8 bg-[#3b4b5b] text-white">
       <h2 className="text-xl font-semibold mb-4 px-4">Web Stories</h2>
-      <div className="px-4">
+      <div className="px-4 gap-x-4">
 <Carousel
-  swipeable={false}
+  swipeable={true}
   draggable={false}
   showDots={false}
   responsive={responsive}
@@ -68,22 +71,20 @@ const WebStories = () => {
 //   dotListClass="custom-dot-list-style"
 //   itemClass="carousel-item-padding-40-px"
 >
-    {stories.map((story, index) => (
-          <div key={index} className="flex-shrink-0 w-64 ">
-            <div className="relative h-48">
-              <img
-                src={story.image}
-                // src={sampleImage}
-                // alt={story.title}
-                layout="fill"
-                objectFit="cover"
-                className="rounded-lg"
-              />
+{stories.map((story, index) => (
+            <div key={index} className="flex-shrink-0 w-full md:w-64 p-2 m-auto">
+              <div className="relative h-48">
+                <img
+                  src={story.image}
+                  alt={story.title}
+                  layout="fill"
+                  objectFit="cover"
+                  className="rounded-lg w-full h-full"
+                />
+              </div>
+              <p className="mt-2 text-sm">{story.title}</p>
             </div>
-            <p className="mt-2 text-sm">{story.title}</p>
-          </div>
-        ))}
-
+          ))}
         </Carousel>
       </div>
     </div>
