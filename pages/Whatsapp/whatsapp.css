@@ -1,0 +1,105 @@
+/* .contact-absolute {
+  position: fixed;
+  right: 15px;
+  bottom: 120px;
+  z-index: 99999;
+} */
+.contact-absolute {
+    position: fixed;
+    left: 16px;
+    bottom: 16px;
+  
+    z-index: 99999;
+  }
+  .contact-absolute a {
+    text-decoration: none;
+  }
+  .contactus-image-wrapper {
+    width: 53px;
+    padding: 8px;
+    background-color: #25d366;
+    border-radius: 30%;
+    border: 0px;
+  }
+  .contactus-image-wrapper img {
+    width: 100%;
+  }
+  
+  /* .contact-whatsapp-text {
+    display: inline-block;
+    width: 0;
+    background-color: #25d366;
+    height: 60px;
+    direction: rtl;
+    visibility: hidden;
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+  
+    transform: translateX(50px);
+    white-space: nowrap;
+    pointer-events: none;
+  } */
+  .contact-whatsapp-text {
+    display: inline-block;
+    width: 0;
+    background-color: #25d366;
+    height: 53px;
+    direction: ltr;
+    visibility: hidden;
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+  
+    transform: translateX(-50px);
+    white-space: nowrap;
+    pointer-events: none;
+  }
+  
+  .contact-text-wrapper:hover .contact-whatsapp-text {
+    display: flex;
+    align-items: center;
+    visibility: visible;
+    width: max-content;
+    direction: ltr;
+    transform: translateX(0);
+    transition: 0.7s;
+    text-decoration: none !important;
+  }
+  /* .contact-text-wrapper:hover .contactus-image-wrapper {
+    border-top-right-radius: 30%;
+    border-top-left-radius: 0%;
+    border-bottom-left-radius: 0%;
+    border-bottom-right-radius: 30%;
+  } */
+  .contact-text-wrapper:hover .contactus-image-wrapper {
+    border-top-right-radius: 0%;
+    border-top-left-radius: 30%;
+    border-bottom-left-radius: 30%;
+    border-bottom-right-radius: 0%;
+  }
+  
+  @media only screen and (max-width: 767px) {
+    .contact-absolute {
+      position: fixed;
+      left: 16px;
+      bottom: 16px;
+    }
+    .contact-text-wrapper:hover .contact-whatsapp-text {
+      display: none;
+      visibility: hidden;
+      width: 0;
+    }
+    .contact-text-wrapper:hover .contactus-image-wrapper {
+      border-top-right-radius: 30%;
+      border-top-left-radius: 30%;
+      border-bottom-left-radius: 30%;
+      border-bottom-right-radius: 30%;
+    }
+  }
