@@ -2,28 +2,10 @@ import { sampleImage } from '@/public/Images';
 import Image from 'next/image';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-const stories = [
-  {
-    title: 'Earth Vs Other Planets: How Long Is One Day On Each Planet In Solar System?',
-    image: 'https://source.unsplash.com/random/800x600/?news',
-  },
-  {
-    title: '7 Smartphones Under Rs 25,000 With Long Battery Life',
-    image: 'https://source.unsplash.com/random/800x600/?news',
-  },
-  {
-    title: 'Top 5 Superhit Songs Starring Sargun Mehta',
-    image: 'https://source.unsplash.com/random/800x600/?news',
-  },
-  {
-    title: '6 Reasons To Think Twice Before Fitting Aftermarket Alloy Wheels On Your Car',
-    image: 'https://source.unsplash.com/random/800x600/?news',
-  },
-  {
-    title: 'Beware: 7 Mistakes That Can Get You A Traffic Challan',
-    image: 'https://source.unsplash.com/random/800x600/?news',
-  },
-];
+
+
+
+
 
 const responsive = {
     desktop: {
@@ -49,6 +31,30 @@ const responsive = {
   };
 
 const WebStories = () => {
+
+    const stories = [
+        {
+          title: 'Earth Vs Other Planets: How Long Is One Day On Each Planet In Solar System?',
+          image: 'https://source.unsplash.com/random/800x600/?news',
+        },
+        {
+          title: '7 Smartphones Under Rs 25,000 With Long Battery Life',
+          image: 'https://source.unsplash.com/random/800x600/?news',
+        },
+        {
+          title: 'Top 5 Superhit Songs Starring Sargun Mehta',
+          image: 'https://source.unsplash.com/random/800x600/?news',
+        },
+        {
+          title: '6 Reasons To Think Twice Before Fitting Aftermarket Alloy Wheels On Your Car',
+          image: 'https://source.unsplash.com/random/800x600/?news',
+        },
+        {
+          title: 'Beware: 7 Mistakes That Can Get You A Traffic Challan',
+          image: 'https://source.unsplash.com/random/800x600/?news',
+        },
+      ];
+      
   return (
     <div className="py-8 bg-[#3b4b5b] text-white">
       <h2 className="text-xl font-semibold mb-4 px-4">Web Stories</h2>
