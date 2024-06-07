@@ -1,5 +1,7 @@
 import { sampleImage } from '@/public/Images';
 import Image from 'next/image';
+import { redirect } from 'next/navigation';
+import { useRouter } from 'next/router';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 
@@ -31,6 +33,7 @@ const responsive = {
   };
 
 const WebStories = () => {
+    const router=useRouter();
 
     const stories = [
         {
@@ -54,6 +57,11 @@ const WebStories = () => {
           image: 'https://source.unsplash.com/random/800x600/?news',
         },
       ];
+
+      const pageDetail=(title)=>{
+        router.push(`/detail/${title}`)
+        // redirect("a")
+      }
       
   return (
     <div className="py-8 bg-[#3b4b5b] text-white">
@@ -78,7 +86,7 @@ const WebStories = () => {
 //   itemClass="carousel-item-padding-40-px"
 >
 {stories.map((story, index) => (
-            <div key={index} className="flex-shrink-0 w-full md:w-64 p-2 m-auto">
+            <div key={index} className="flex-shrink-0 w-full md:w-64 p-2 m-auto cursor-pointer" onClick={()=>pageDetail(story?.title)}>
               <div className="relative h-48">
                 <img
                   src={story.image}

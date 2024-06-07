@@ -6,6 +6,7 @@ import Section from './Section';
 import Footer from './Fotter'
 import { Button } from '@nextui-org/react';
 import WebStories from '@/components/WebStories';
+import { useRouter } from 'next/router';
 
 
 
@@ -32,6 +33,7 @@ const categories = [
 
 const Home = () => {
     const [sliceValue, setSliceValue] = useState(4);
+    const router=useRouter();
 
     // Sample news data
     const newsData = [
@@ -182,6 +184,11 @@ const Home = () => {
     const loadMore = () => {
       setVisibleNewsCount(visibleNewsCount + 9);
     };
+
+    const pageDetail=(title)=>{
+        router.push(`/detail/${title}`)
+        // redirect("a")
+      }
     
     return (
         <div>
@@ -209,7 +216,7 @@ const Home = () => {
       <h1 className="text-3xl font-bold mb-4">Latest News</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {newsData.slice(0, visibleNewsCount).map((news) => (
-          <div key={news.id} className="bg-white rounded-lg overflow-hidden shadow-md">
+          <div key={news.id} className="bg-white rounded-lg overflow-hidden shadow-md cursor-pointer" onClick={()=>pageDetail(news?.title)}>
             <img src={news.imageUrl} alt={news.title} className="w-full h-48 object-cover" />
             <div className="p-4">
               <h2 className="text-xl font-bold mb-2">{news.title}</h2>
