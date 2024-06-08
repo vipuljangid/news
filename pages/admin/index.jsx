@@ -1,8 +1,10 @@
+import doFetch from '@/sources/functions/doFetch';
 import Layout from '../../components/Layout';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function AdminDashboard() {
+  const [loading, setLoading] = useState(false);
   const [articles, setArticles] = useState([
     {
       id: 1,
@@ -57,7 +59,18 @@ export default function AdminDashboard() {
 
   const handleDelete = (id) => {
     setArticles(articles.filter(article => article.id !== id));
+
   };
+
+  const getArtical=async()=>{
+    const resp=await doFetch('localhost:8000/api/admin')
+    // setArticles(resp.articals)
+  }
+    
+
+  useEffect(()=>{
+    getArtical();
+  },[])
 
   return (
     <Layout>

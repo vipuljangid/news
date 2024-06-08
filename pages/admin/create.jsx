@@ -5,12 +5,14 @@ import { useState } from 'react';
 export default function CreateArticle() {
   const [articles, setArticles] = useState([]);
 
-  const handleSubmit = (formData) => {
+  const handleSubmit =async (formData) => {
     const newArticle = {
       id: Date.now(),
       ...formData,
     };
     setArticles([...articles, newArticle]);
+      const resp=await doFetch('localhost:8000/api/admin',POST,{formData})
+      console.log(resp)
   };
 
   return (
